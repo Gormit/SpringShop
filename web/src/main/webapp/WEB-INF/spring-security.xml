@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/beans"
+             xmlns:security="http://www.springframework.org/schema/security"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                                http://www.springframework.org/schema/security
+                                http://www.springframework.org/schema/security/spring-security-3.2.xsd"
+             xmlns:beans="http://www.springframework.org/schema/beans">
+
+    <security:http auto-config="true" use-expressions="true">
+
+        <!--users permissions-->
+
+        <security:intercept-url pattern="/*" access="permitAll"/>
+        <security:intercept-url pattern="/admin/*" access="hasRole('admin')"/>
+        <!--<security:access-denied-handler error-page="/403"/>-->
+
+        <!--login form-->
+        <security:form-login
+                login-processing-url="/j_spring_security_check"
+                login-page="/login.do"
+                authentication-failure-url="/login/error.do"
+                username-parameter="j_username"
+                password-parameter="j_password"
+                />
+        <security:anonymous username="guest" granted-authority="anonymous" />
+        <security:logout logout-success-url="/index.jsp"/>
+    </security:http>
+
+    <!--authentication with database-->
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:jdbc-user-service
+                    data-source-ref="dataSource"
+                    users-by-username-query="SELECT F_mail, F_password, TRUE FROM t_user WHERE F_mail=?"
+                    authorities-by-username-query="SELECT t_user.F_mail, t_role.F_name FROM t_user join t_role on t_user.F_roleId = t_role.F_roleId where F_mail = ?"
+                    />
+        </security:authentication-provider>
+    </security:authentication-manager>
+</beans:beans>
