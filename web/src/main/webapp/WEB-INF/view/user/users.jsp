@@ -26,5 +26,7 @@
         </tbody>
     </table>
 
+    <a href="/shop/" class="btn btn-info"><spring:message code="button.backToShop"/></a>
+
 </div>
 
