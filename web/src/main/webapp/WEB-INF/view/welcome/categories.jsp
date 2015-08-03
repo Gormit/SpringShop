@@ -9,7 +9,7 @@
 
   <table id="hello-table" class="table table-striped table-hover">
     <thead>
-    <th>Категория</th>
+    <th><spring:message code="table_text.category"/></th>
     </thead>
     <tbody>
     <c:forEach var="category" items="${categories}">

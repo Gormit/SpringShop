@@ -9,8 +9,8 @@
 
     <table id="hello-table" class="table table-striped table-hover">
         <thead>
-        <th>Mail</th>
-        <th>Role</th>
+        <th><spring:message code="table_text.mail"/></th>
+        <th><spring:message code="table_text.role"/></th>
         </thead>
         <tbody>
         <c:forEach var="user" items="${users}">

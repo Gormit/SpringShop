@@ -9,9 +9,9 @@
 
     <table id="hello-table" class="table table-striped table-hover">
         <thead>
-        <th>Наименование товара</th>
-        <th>Цена</th>
-        <th>Есть на складе</th>
+        <th><spring:message code="table_text.product_name"/></th>
+        <th><spring:message code="table_text.price"/></th>
+        <th><spring:message code="table_text.in_stock"/></th>
         </thead>
         <tbody>
         <c:forEach var="good" items="${goods}">
