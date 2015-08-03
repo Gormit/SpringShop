@@ -1,4 +1,3 @@
-//controller to start-page
 
 package by.gormit.shop.controller;
 
