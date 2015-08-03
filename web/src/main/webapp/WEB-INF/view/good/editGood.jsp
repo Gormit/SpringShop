@@ -58,7 +58,7 @@
             </tr>
         </table>
 
-        <button id="submit" type="submit" class="btn btn-info">Save</button>
+        <button id="submit" type="submit" class="btn btn-info"><spring:message code="button.save"/></button>
         <a href="/shop/" class="btn btn-info"><spring:message code="button.backToShop"/></a>
 
     </form>
