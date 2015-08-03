@@ -69,5 +69,15 @@ public class GoodController {
         return "viewGood";
     }
 
+    @RequestMapping(value = "/good/buyGood/{goodId}", method = RequestMethod.GET)
+    public String buyGood(ModelMap model, @PathVariable long goodId) {
+        Good good = goodService.get(goodId);
+        good.setCount(good.getCount() - 1);
+        goodService.update(good);
+        List<Good> goods = goodService.getAll();
+        model.put("goods", goods);
+        return "welcome";
+    }
+
 
 }
