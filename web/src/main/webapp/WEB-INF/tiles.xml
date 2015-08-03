@@ -26,6 +26,11 @@
         <put-attribute name="body" value="/WEB-INF/view/welcome/welcome.jsp"/>
     </definition>
 
+    <!--users page-->
+    <definition name="users" extends="default">
+        <put-attribute name="body" value="/WEB-INF/view/user/users.jsp"/>
+    </definition>
+
     <!--categories page-->
     <definition name="categories" extends="default">
         <put-attribute name="menu" value="/WEB-INF/view/common/menu.jsp"/>
