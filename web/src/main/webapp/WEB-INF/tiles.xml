@@ -20,6 +20,12 @@
         <put-attribute name="body" value="/WEB-INF/view/security/login.jsp"/>
     </definition>
 
+    <!--registration page-->
+    <definition name="registration" extends="default">
+        <put-attribute name="buttons" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/user/registration.jsp"/>
+    </definition>
+
     <!--goods page-->
     <definition name="welcome" extends="default">
         <put-attribute name="menu" value="/WEB-INF/view/common/menu.jsp"/>
@@ -50,10 +56,15 @@
     </definition>
 
     <!--ban page-->
-    <definition name="ban" template="/WEB-INF/view/layouts/ban.jsp">
-        <put-attribute name="header" value="/WEB-INF/view/common/header.jsp"/>
-        <put-attribute name="body" value="/WEB-INF/view/layouts/ban.jsp"/>
-        <put-attribute name="footer" value="/WEB-INF/view/common/footer.jsp"/>
+    <definition name="ban" extends="default">
+        <put-attribute name="buttons" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/user/ban.jsp"/>
+    </definition>
+
+    <!--thanks page-->
+    <definition name="thanks" extends="default">
+        <put-attribute name="buttons" value=""/>
+        <put-attribute name="body" value="/WEB-INF/view/user/thanks.jsp"/>
     </definition>
 
 

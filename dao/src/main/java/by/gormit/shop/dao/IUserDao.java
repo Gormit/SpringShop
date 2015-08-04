@@ -10,5 +10,6 @@ import java.util.List;
 
 public interface IUserDao extends IDao<User>{
 
-    List<User> getAll();
+    List getAll();
+    User getUserByMailAndPassword(String mail, String password);
 }

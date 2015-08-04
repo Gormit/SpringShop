@@ -33,6 +33,7 @@ public class CategoryDao extends BaseDao<Category> implements ICategoryDao {
         return query.list();
     }
 
+    // Using Criteria for example
     @Override
     public List<Good> getGoodsByCategoryId(int categoryId) {
         Category category = (Category) getSession().get(Category.class, categoryId);

@@ -8,7 +8,7 @@
 <div class="span12">
     <sec:authorize access="hasRole('anonymous')">
         <a href="/shop/login.do" class="btn btn-info"><spring:message code="button.login"/></a>
-        <a href="registration.jsp" class="btn btn-info"><spring:message code="button.registration"/></a>
+        <a href="/shop/registration.do" class="btn btn-info"><spring:message code="button.registration"/></a>
     </sec:authorize>
 
     <sec:authorize access="hasAnyRole('user', 'admin')">
