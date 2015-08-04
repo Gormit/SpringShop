@@ -7,7 +7,7 @@
 
 <div class="span9">
 
-    <form action="/shop/admin/saveGood.do">
+    <form action="/shop/admin/saveGood.do" method="post">
         <table id="view-table" class="table table-striped table-hover table-bordered">
             <input name="goodId" value="${good.goodId}" hidden/></td>
             <tr>

@@ -58,7 +58,7 @@ public class GoodController {
         return "editGood";
     }
 
-    @RequestMapping(value = "/admin/saveGood", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/saveGood", method = RequestMethod.POST)
     public String addGood (HttpServletRequest req,
                            @ModelAttribute Good good,
                            ModelMap model) {
